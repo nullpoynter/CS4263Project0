@@ -28,7 +28,7 @@ Then you need to navigate to the directory (<code>/project0_pythonvm/</code>).
 Finally, you can run the program by using the following command:
 
 ```
-$ python randomNum.py
+$ sudo python randomNum.py
 ```
 
 Then it should be hosting the website on the vm's external IP, so without closing out of the vm go to the vm instances page and click the IP address that corresponds to your vm and you should be at the website.
