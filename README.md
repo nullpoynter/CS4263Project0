@@ -53,7 +53,7 @@ You can now visit the app at <code><i><your-project></i>.appspot.com</code>.
 
 ### Python
 
-To test with Python, navigate to the <code>/project0_python</code> directory installed in the <b>Installation and Deployment/Python App Engine<b> section.
+To test with Python, navigate to the <code>/project0_python</code> directory installed in the <b>Installation and Deployment/Python App Engine</b> section.
 
 // NEED TO ADD MORE HERE WILL DO LATER @author Adrienne Poynter
 
