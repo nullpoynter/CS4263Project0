@@ -10,6 +10,29 @@ This project includes four different implementations of a website that displays 
 
 ### Python Virtual Machine (VM)
 
+First you will need to create a vm instance on Google Compute Engine in a new or existing project. Select the default, Debian 9, as the OS. Select the lowest power machine and make sure to enable HTTP traffic.
+
+Next, SSH into the vm and install <code>/project0_pythonvm/</code> and all of its contents to your vm. 
+Then, you need to install project dependancies.
+
+```
+$ sudo apt-get install python-setuptools python-dev build-essential
+
+$ sudo easy_install pip
+
+$ sudo pip install flask
+```
+
+Then you need to navigate to the directory (<code>/project0_pythonvm/</code>).
+
+Finally, you can run the program by using the following command:
+
+```
+$ python randomNum.py
+```
+
+Then it should be hosting the website on the vm's external IP, so without closing out of the vm go to the vm instances page and click the IP address that corresponds to your vm and you should be at the website.
+
 ### Python App Engine
 
 To implement using Google App Engine, create a project or select an existing project. Then, open the cloud shell.
