@@ -74,7 +74,44 @@ You can now visit the app at <code><i><your-project></i>.appspot.com</code>.
 
 ## Testing
 
-### Python
+### Python Virtual Machine
+
+To test the python vm implementation you will first need to install tmux:
+
+```
+$ sudo apt install tmux
+```
+You will then need to create a new tmux session using the following command:
+
+```
+$ tmux
+```
+
+Then navigate to the <code>/project0_pythonvm/</code> directory and run the flask app
+
+```
+$ sudo python randomNum.py
+```
+
+Then while the app is running leave the tmux session using the command <code>CTRL+b d</code>
+
+Then navigate to the <code>/project0_pythonvm/</code> directory and run the following command:
+
+```
+$ python test.py
+```
+
+This should give you a pass/fail to show it is working correctly.
+
+Make sure to stop the app running in tmux. To do that use the following command to get back to the tmux session:
+
+```
+$ tmux attach-session -t 0
+```
+
+Then press <code>CTRL+c</code> to stop the app
+
+### Python App Engine
 
 To test with Python, navigate to the <code>/project0_python</code> directory installed in the <b>Installation and Deployment/Python App Engine</b> section.
 
