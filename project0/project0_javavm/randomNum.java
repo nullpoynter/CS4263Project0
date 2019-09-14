@@ -7,34 +7,26 @@ import java.io.PrintWriter;
 import java.io.WriteAbortedException;
 import java.util.Random;
 import java.net.*;
-//import sun.net.InetAddressCachePolicy;
-
 import java.lang.String;
-
 
 public class randomNum{
 
 	public static void main(String[] args) throws IOException{
 		System.out.println("Waiting for client");
-		InetAddress address = InetAddress.getByName("<IP ADDRE>");
-		//byte[] ipaddress = new byte[]{i.p address}; 
-		//InetAddress add = InetAddress.getByAddress(ipaddress);
-		ServerSocket server = new ServerSocket( 8999,50,address); //8081
+		InetAddress address = InetAddress.getByName("<IP ADDRE>");       //input the ip address here to create connection to server
+		ServerSocket server = new ServerSocket( 8999,50,address);       //creates the port available to given i.p address
 		
-
-
+		//spins forever unless user enter the default address of the port
 		while(true){
-			//spin forever
-			Random rand = new Random();
-    		int number = rand.nextInt(1000000);
+			Random rand = new Random();                         //object of the given class
+    			int number = rand.nextInt(1000000);                 //generates random number 
 			try(Socket socket = server.accept()) {
 				
-				String s = String.valueOf(number);
+				String s = String.valueOf(number);	    //converts int to string
 				System.out.println("Connection Established");
-				//socket.getOutputStream().write(s.getBytes("UTF-8"));
-				OutputStream outputStream = socket.getOutputStream();
-				PrintWriter printWriter = new PrintWriter(outputStream);
-				printWriter.println("HTTP/1.0 200 OK");
+				OutputStream outputStream = socket.getOutputStream();  //helps to catch STDOUT and pass it  
+				PrintWriter printWriter = new PrintWriter(outputStream);  //writer to a file
+				printWriter.println("HTTP/1.0 200 OK");                   //default simple HTTP response
 				printWriter.println("");
 				printWriter.println("<html>");
 				printWriter.println("<body>");
@@ -48,9 +40,6 @@ public class randomNum{
 				System.out.println("Could not creat connection...");
 				System.out.println(e);
 			}
-		
 		}
-		
-		
 	}
 }
