@@ -72,13 +72,13 @@ You can now visit the app at <code><i><your-project></i>.appspot.com</code>.
 
 ### Java App Engine
 
-> Open Cloud Shell
-> Create a project or use existing one.
-> Clone the project0_java dir using "git clone".
-> Create an application to deploy app using: "gcloud app create" and follow the instruction that best fit.
-> Set which project to use using: "gcloud config set project\ <prj name>"
-> Now, deploy created app using: "mvn appengine:deploy"
-> Type "gcloud app browse" to get the ouput of the URL where you can visit the web page for the random number generated.
+ Open Cloud Shell
+ Create a project or use existing one.
+ Clone the project0_java dir using "git clone".
+ Create an application to deploy app using: "gcloud app create" and follow the instruction that best fit.
+ Set which project to use using: "gcloud config set project\ <prj name>"
+ Now, deploy created app using: "mvn appengine:deploy"
+ Type "gcloud app browse" to get the ouput of the URL where you can visit the web page for the random number generated.
     
     
 ## Testing
