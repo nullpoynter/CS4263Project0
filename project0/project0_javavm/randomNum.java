@@ -16,7 +16,7 @@ public class randomNum{
 		InetAddress address = InetAddress.getLocalHost();
 		//InetAddress address = InetAddress.getByName(<IP Address>);       //input the ip address here to create connection to server
 		ServerSocket server = new ServerSocket( 80);       //creates the port available to given i.p address
-		
+		System.out.println(address);
 		//spins forever unless user enter the default address of the port
 		while(true){
 			Random rand = new Random();                         //object of the given class
