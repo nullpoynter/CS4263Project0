@@ -14,9 +14,10 @@ public class randomNum{
 	public static void main(String[] args) throws IOException{
 		System.out.println("Waiting for client");
 		InetAddress address = InetAddress.getLocalHost();
-		//InetAddress address = InetAddress.getByName(<IP Address>);       //input the ip address here to create connection to server
-		ServerSocket server = new ServerSocket( 80);       //creates the port available to given i.p address
+		//InetAddress address = InetAddress.getByName(<IP Address>);       //use only for pc's ip address
+		ServerSocket server = new ServerSocket(80);       //creates the port available to given i.p address
 		System.out.println(address);
+		
 		//spins forever unless user enter the default address of the port
 		while(true){
 			Random rand = new Random();                         //object of the given class
@@ -30,11 +31,7 @@ public class randomNum{
 				printWriter.println("HTTP/1.0 200 OK");                   //default simple HTTP response
 				printWriter.println("");
 				printWriter.println("<html>");
-				//printWriter.println("<body>");
-				//printWriter.println("<h1>WelCome to Software & Recq </h1>");
-				//printWriter.println("<h2> Random Number: " + s );
 				printWriter.println(s);
-				//printWriter.println("</body>");
 				printWriter.println("</html>");
 				printWriter.flush();						
 			}
