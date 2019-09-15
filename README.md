@@ -7,7 +7,6 @@ This project includes four different implementations of a website that displays 
 ### Prerequesites
 
 
-
 ### Python Virtual Machine (VM)
 
 First you will need to create a vm instance on Google Compute Engine in a new or existing project. Select the default, Debian 9, as the OS. Select the lowest power machine and make sure to enable HTTP traffic.
@@ -74,7 +73,8 @@ You can now visit the app at <code><i><your-project></i>.appspot.com</code>.
 
  Open Cloud Shell
  Create a project or use existing one.
- Clone the project0_java dir using "git clone".
+ Clone the https://github.com/nullpoynter/CS4263Project0.git dir using "git clone".
+ Navigate from project0 -> project0_java.
  Create an application to deploy app using: "gcloud app create" and follow the instruction that best fit.
  Set which project to use using: "gcloud config set project\ <prj name>"
  Now, deploy created app using: "mvn appengine:deploy"
@@ -131,6 +131,56 @@ Then run:
 ```
 $ python test.py
 ```
+
+### Java Virtual Machine
+
+To test the java vm implementation you will first need to install tmux:
+
+```
+$ sudo apt install tmux
+```
+You will then need to create a new tmux session using the following command:
+
+```
+$ tmux
+```
+
+Then navigate to the <code>/project0_javavm/</code> directory and run
+
+```
+$ javac randomNum.java
+
+$ java randomNum
+```
+
+Then while the app is running leave the tmux session using the command <code>CTRL+b d</code>
+
+Then navigate to the <code>/project0_javavm/</code> directory and run the following command:
+
+```
+$ python test.py
+```
+
+This should give you a pass/fail to show it is working correctly.
+
+Make sure to stop the app running in tmux. To do that use the following command to get back to the tmux session:
+
+```
+$ tmux attach-session -t 0
+```
+
+Then press <code>CTRL+c</code> to stop the app
+
+### Java App Engine
+
+To test with Java, navigate to <code>/project0_java</code> directory installed in the <b>project0/project0_java</b> directory.
+
+Then run:
+
+```
+$ python test.py
+```
+
 
 ## Built with
 
