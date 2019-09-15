@@ -6,23 +6,33 @@ This project includes four different implementations of a website that displays 
 
 ### Prerequesites
 
+Installation and deployment of this project requires access to the Google Cloud Platform. Because the machine is ephemeral, no system-wide change will persist beyond session end. Therefore, it is a good idea to revist this section with each new session or to update your environment at https://cloud.google.com/console/cloudshell/environment/view.
+
+Once on your GCP console, this project will require Java, Python, Flask, Tomcat, and Curl.
+
+To install all dependencies, enter the following commands:
+
+```
+$ sudo apt-get update
+$ sudo apt-get install default-jdk
+$ sudo apt-get install python-setuptools python-dev build-essential
+$ sudo easy_install pip
+$ sudo pip install flask
+$ sudo apt-get install tomcat8
+$ sudo apt-get install curl
+```
+
+At multiple points, you may be asked if you would like to proceed ("Do you want to continue?"). Simply answer "Y" and press enter to continue. If at any point you would like to quit the installation mid-process, enter "CTRL+C".
+
+You may also want access to a text editor like Vim or Emacs for certain parts of testing.
 
 ### Python Virtual Machine (VM)
 
-First you will need to create a vm instance on Google Compute Engine in a new or existing project. Select the default, Debian 9, as the OS. Select the lowest power machine and make sure to enable HTTP traffic.
+First you will need to create a VM instance on Google Compute Engine in a new or existing project. Select the default, Debian 9, as the OS. Select the lowest power machine and make sure to enable HTTP traffic.
 
-Next, SSH into the vm and install <code>/project0_pythonvm/</code> and all of its contents to your vm. 
-Then, you need to install project dependancies.
+Next, SSH into the VM and install <code>/project0_pythonvm/</code> and all its contents to your VM. 
 
-```
-$ sudo apt-get install python-setuptools python-dev build-essential
-
-$ sudo easy_install pip
-
-$ sudo pip install flask
-```
-
-Then you need to navigate to the directory (<code>/project0_pythonvm/</code>).
+Then, navigate to the directory (<code>/project0_pythonvm/</code>).
 
 Finally, you can run the program by using the following command:
 
@@ -30,7 +40,7 @@ Finally, you can run the program by using the following command:
 $ sudo python randomNum.py
 ```
 
-Then it should be hosting the website on the vm's external IP, so without closing out of the vm go to the vm instances page and click the IP address that corresponds to your vm and you should be at the website.
+It should be hosting the website on the VM's external IP. Without closing out of the VM, go to the VM instances page and click the IP address that corresponds to your VM. You should be at the website.
 
 ### Python App Engine
 
@@ -61,11 +71,12 @@ $ gcloud app create
 
 Finally, to deploy your app, ensure that you are in the <code>/project0_python/</code> directory and type the command:
 
+
 ```
 $ gcloud app deploy app.yaml --project
 ```
 
-You can now visit the app at <code><i><your-project></i>.appspot.com</code>.
+You can now visit the app at <code><i>your-project-name</i>.appspot.com</code>.
 
 ### Java Virtual Machine (VM)
 
@@ -85,26 +96,27 @@ You can now visit the app at <code><i><your-project></i>.appspot.com</code>.
 
 ### Python Virtual Machine
 
-To test the python vm implementation you will first need to install tmux:
+To test the Python VM implementation, you will first need to install tmux:
 
 ```
 $ sudo apt install tmux
 ```
+
 You will then need to create a new tmux session using the following command:
 
 ```
 $ tmux
 ```
 
-Then navigate to the <code>/project0_pythonvm/</code> directory and run the flask app
+Navigate to the <code>/project0_pythonvm/</code> directory and run the Flask app
 
 ```
 $ sudo python randomNum.py
 ```
 
-Then while the app is running leave the tmux session using the command <code>CTRL+b d</code>
+While the app is running, leave the tmux session using the command <code>CTRL+b d</code>
 
-Then navigate to the <code>/project0_pythonvm/</code> directory and run the following command:
+Then, navigate to the <code>/project0_pythonvm/</code> directory and run the following command:
 
 ```
 $ python test.py
@@ -112,29 +124,33 @@ $ python test.py
 
 This should give you a pass/fail to show it is working correctly.
 
-Make sure to stop the app running in tmux. To do that use the following command to get back to the tmux session:
+Make sure to stop the app running in tmux. To do that, use the following command to get back to the tmux session:
 
 ```
 $ tmux attach-session -t 0
 ```
 
-Then press <code>CTRL+c</code> to stop the app
+Enter <code>CTRL+c</code> to stop the app
 
 ### Python App Engine
 
-To test with Python, navigate to the <code>/project0_python</code> directory installed in the <b>Installation and Deployment/Python App Engine</b> section.
+To test with Python, navigate to the <code>/project0_python</code> directory installed in the <b>Installation and Deployment/Python App Engine</b> section. 
 
-// NEED TO ADD MORE HERE WILL DO LATER @author Adrienne Poynter
+To test your own website, rather than the one created by our team, you will have to go into a text editor of your choosing and change the address given in line 8 from https://cs42633project0python.appspot.com to the address you generated in the <b>Installation and Deployment/Python App Engine</b> section.
 
-Then run:
+If you would like to toggle debugging/progression comments off, you may change the <code>loading</code> variable at line 2 to <code>0</code>
+
+To run, enter:
 
 ```
 $ python test.py
 ```
 
+It may take a moment for all 10 tests to complete.
+
 ### Java Virtual Machine
 
-To test the java vm implementation you will first need to install tmux:
+To test the Java VM implementation, you will first need to install tmux:
 
 ```
 $ sudo apt install tmux
@@ -145,7 +161,7 @@ You will then need to create a new tmux session using the following command:
 $ tmux
 ```
 
-Then navigate to the <code>/project0_javavm/</code> directory and run
+Navigate to the <code>/project0_javavm/</code> directory, and run:
 
 ```
 $ javac randomNum.java
@@ -153,9 +169,9 @@ $ javac randomNum.java
 $ java randomNum
 ```
 
-Then while the app is running leave the tmux session using the command <code>CTRL+b d</code>
+While the app is running, leave the tmux session using the command <code>CTRL+b d</code>
 
-Then navigate to the <code>/project0_javavm/</code> directory and run the following command:
+Then, navigate to the <code>/project0_javavm/</code> directory and run the following command:
 
 ```
 $ python test.py
@@ -163,7 +179,7 @@ $ python test.py
 
 This should give you a pass/fail to show it is working correctly.
 
-Make sure to stop the app running in tmux. To do that use the following command to get back to the tmux session:
+Make sure to stop the app running in tmux. To do that, use the following command to get back to the tmux session:
 
 ```
 $ tmux attach-session -t 0
@@ -180,7 +196,6 @@ Then run:
 ```
 $ python test.py
 ```
-
 
 ## Built with
 
