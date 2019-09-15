@@ -86,6 +86,21 @@ You can now visit the app at <code><i>your-project-name</i>.appspot.com</code>. 
 
 ### Java Virtual Machine (VM)
 
+First you will need to create a VM instance on Google Compute Engine in a new or existing project. Select the default, Debian 9, as the OS. Select the lowest power machine and make sure to enable HTTP traffic.
+
+Next, SSH into the VM and install <code>/project0_javavm/</code> and all its contents to your VM. 
+
+Then, navigate to the directory (<code>/project0_javanvm/</code>).
+
+Finally, you can run the program by using the following commands:
+
+```
+$ sudo javac randomNum.java
+$ sudo java randomNum
+```
+
+It should be hosting the website on the VM's external IP. Without closing out of the VM, go to the VM instances page and click the IP address that corresponds to your VM. You should be at the website.
+
 ### Java App Engine
 
  Open Cloud Shell
