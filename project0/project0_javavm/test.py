@@ -5,7 +5,7 @@ def test_duplicates():
     if loading == 1:
         print("beginning duplicates test...")
     rmcmd = 'rm output.txt' # used for cleanup at the end
-    curlcmd = 'curl -s localhost:80 -w "\n" >> output.txt' # silently accesses our website via curl and appends each line to output.txt
+    curlcmd = 'curl -s localhost:80 -w "\n" > output.txt' # silently accesses our website via curl and appends each line to output.txt
     for i in range(1000): # gets 1000 random numbers from website
         os.system(curlcmd)
     # code modified from https://stackoverflow.com/questions/12937797/how-can-i-find-duplicate-lines-in-a-text-file-and-print-them
