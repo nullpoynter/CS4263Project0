@@ -77,11 +77,11 @@ $ gcloud app deploy app.yaml --project <your-project-name>
 ```
 You will have to answer yes to the prompt.
 
-![Where to answer yes](https://github.com/nullpoynter/CS4263Project0/blob/master/tutorial1.PNG)
+![Where to answer yes](https://github.com/nullpoynter/CS4263Project0/blob/master/README_screenshots/tutorial1.PNG)
 
 You can now visit the app at <code><i>your-project-name</i>.appspot.com</code>. You may simply click the link provided.
 
-![How to visit website](https://github.com/nullpoynter/CS4263Project0/blob/master/tutorial2.PNG)
+![How to visit website](https://github.com/nullpoynter/CS4263Project0/blob/master/README_screenshots/tutorial2.PNG)
 
 
 ### Java Virtual Machine (VM)
@@ -144,11 +144,11 @@ To test with Python, navigate to the <code>/project0_python</code> directory ins
 
 To test your own website, rather than the one created by our team, you will have to go into a text editor of your choosing and change the address given in line 8 from https://cs42633project0python.appspot.com to the address you generated in the <b>Installation and Deployment/Python App Engine</b> section.
 
-![Where to change URL](https://github.com/nullpoynter/CS4263Project0/blob/master/tutorial3.PNG)
+![Where to change URL](https://github.com/nullpoynter/CS4263Project0/blob/master/README_screenshots/tutorial3.PNG)
 
 If you would like to toggle debugging/progression comments off, you may change the <code>loading</code> variable at line 2 to <code>0</code>.
 
-![Where to toggle comments](https://github.com/nullpoynter/CS4263Project0/blob/master/tutorial4.PNG)
+![Where to toggle comments](https://github.com/nullpoynter/CS4263Project0/blob/master/README_screenshots/tutorial4.PNG)
 
 To run, enter:
 
