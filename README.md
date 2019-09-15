@@ -42,6 +42,8 @@ $ sudo python randomNum.py
 
 It should be hosting the website on the VM's external IP. Without closing out of the VM, go to the VM instances page and click the IP address that corresponds to your VM. You should be at the website.
 
+![Where to find your VM IP](https://github.com/nullpoynter/CS4263Project0/blob/master/README_screenshots/pythonvm.PNG)
+
 ### Python App Engine
 
 To implement using Google App Engine, create a project or select an existing project. Then, open the cloud shell.
